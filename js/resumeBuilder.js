@@ -85,7 +85,7 @@ var education = {
             "url": "https://www.udacity.com/course/cs253"
         }
     ]
-}
+};
 
 bio.display = function() {
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -118,7 +118,7 @@ bio.display = function() {
             $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
         }
     }
-}
+};
 
 bio.display();
 
@@ -139,7 +139,7 @@ work.display = function() {
             $(".work-entry:last").append(formattedDescription);
         }
     }
-}
+};
 
 work.display();
 
@@ -163,7 +163,7 @@ projects.display = function() {
 
         }
     }
-}
+};
 
 projects.display();
 
@@ -193,11 +193,11 @@ education.display = function() {
             for (i = 0; i < education.onlineCourses.length; i++) {
                 var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
                 var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
-                var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+                var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
                 var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
 
                 $(".education-entry:last").append(formattedTitle + formattedSchool);
-                $(".education-entry:last").append(formattedDates);
+                $(".education-entry:last").append(formattedonlineDates);
                 $(".education-entry:last").append(formattedURL);
             }
         }
@@ -207,12 +207,12 @@ education.display = function() {
 education.display();
 
 function inName(name) {
-    var name = bio.name;
-    name = name.split(" ");
-    name[1] = name[1].toUpperCase();
-    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+    var iname = bio.name;
+    iname = iname.split(" ");
+    iname[1] = iname[1].toUpperCase();
+    iname[0] = iname[0].slice(0, 1).toUpperCase() + iname[0].slice(1).toLowerCase();
 
-    return name[0] + " " + name[1];
+    return iname[0] + " " + iname[1];
 }
 
 $("#main").append(internationalizeButton);
